@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Tote</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/landing-page.css" rel="stylesheet">
+    <link href="css/row-feature.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico">
+
+    <!-- new form script -->
+    
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+    
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
+        <div class="container topnav">
+            <!-- Brand and toggle get grouped for better mobile display--> 
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand topnav text-center" href="#"><img src="img/inline-logo-sm.png"></a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling-->
+            <!-- /.navbar-collapse-->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Header -->
+    <a name="about"></a>
+    <div class="intro-header">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="intro-message">
+                        <h1>Your Personal Vacation Planner</h1>
+                        <h3>TOTE is a virtual travel agent for a time pressed generation. <br />Tell us Who, When, and How Much, and TOTE will plan <br>your ideal vacation.</h3>
+                        
+                    </div>
+                </div>
+                <div class="col-md-5 signup">
+                    <div class="well well-form">
+                       
+                        <h2 class="signup-header">Tell us about your trip:</h2>
+                        
+                            <form class="form-horizontal" action="form_email.php" method="post">
+                              <!-- Budget -->
+                                <div class="form-group required">
+                                    <label for="inputBudget" class="control-label col-xs-5" id="BeginUsingTOTE">How much to spend?&nbsp;</label>
+                                    <div class="col-xs-6 input-group">
+                                      <span class="input-group-addon">$</span>
+                                      <input type="number" name="budget" class="form-control" id="inputBudget" placeholder="e.g. 4000">
+                                      <span class="input-group-addon">.00</span>
+                                    </div>
+                                </div>
+                             <!-- Start date -->
+                              <div class="form-group required">
+                                <label for="inputStartDate" class="control-label col-xs-5">Get out&nbsp;</label>
+                                <div class="col-xs-5 input-group">
+                                  <input type="date" name="start_date" class="form-control" id="inputStartDate" placeholder="mm/dd/yyyy">
+                                  <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                </div>
+                              </div>
+                              <!-- End date -->
+                              <div class="form-group required">
+                                <label for="inputEndDate" class="control-label col-xs-5">Come back&nbsp;</label>
+                                <div class="col-xs-5 input-group ">
+                                  <input type="date" name="end_date" class="form-control" id="inputEndDate">
+                                  <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                </div>
+                              </div>
+                                <!-- # of grownups -->
+                              <div class="form-group required">
+                                <label for="inputAdultCount" class="control-label col-xs-5">How many adults?&nbsp;</label>
+                                <div class="col-xs-3 input-narrow">
+                                  <input type="number" name="adult_count" class="form-control" id="inputAdultCount" placeholder="#">
+                                </div>
+                              </div>
+                              <!-- # of kids -->
+                              <div class="form-group">
+                                <label for="inputKidsCount" class="control-label col-xs-5">Kids&nbsp;&nbsp;</label>
+                                <div class="col-xs-3 input-narrow">
+                                  <input type="number" name="kids_count" class="form-control" id="inputKidsCount" placeholder="#">
+                                </div>
+                              </div>
+                              <!--Trip options -->
+                             <div class="form-group required">
+                                <label for="inputEmail" class="control-label col-xs-5">Mood&nbsp;</label>
+                                <div class="col-xs-7 text-left">
+                                    <!--<input type="checkbox">&nbsp;Hot & Sunny</br>
+                                  <input type="checkbox">&nbsp;Good for kids</br>
+                                  <input type="checkbox">&nbsp;City & Buzzy</br>
+                                  <input type="checkbox">&nbsp;Just Chilling</br>
+                                  <input type="checkbox">&nbsp;Rent a car?</br>-->
+                                    <div class="form-group form-group-checkbox"><label class="checkbox-inline">
+                                      <input type="checkbox" id="inlineCheckbox1" name="mood[]" value="Hot & Sunny"> Hot & Sunny
+                                    </label>
+                                    <label class="checkbox-inline">
+                                      <input type="checkbox" id="inlineCheckbox2" name="mood[]" value="Good for kids"> Good for kids
+                                    </label>
+                                    </div>
+                                    <div class="form-group form-group-checkbox">
+                                    <label class="checkbox-inline">
+                                      <input type="checkbox" id="inlineCheckbox3" name="mood[]" value="City & Busy"> City & Buzzy
+                                    </label>
+                                    <label class="checkbox-inline">
+                                      <input type="checkbox" id="inlineCheckbox4" name="mood[]" value="Just chilling"> Just chilling
+                                    </label>
+                                    </div>
+                                    <div class="form-group form-group-checkbox">
+                                    <label class="checkbox-inline">
+                                      <input type="checkbox" id="inlineCheckbox5" name="mood[]" value="Rent a car"> Rent a car?
+                                    </label>
+                                    <label class="checkbox-inline">
+                                      <input type="checkbox" id="inlineCheckbox5" name="mood[]" value="Weekend drive"> Weekend drive
+                                    </label>
+                                    </div>
+                                </div>
+                              </div>
+                              <!-- Email -->
+                              <div class="form-group required">
+                                <label for="inputEmail" class="control-label col-xs-5">Email&nbsp;</label>
+                                <div class="col-xs-6 input-narrow">
+                                  <input type="email" name="email" class="form-control" id="inputEmail" placeholder="johnsmith@example.com">
+                                </div>
+                              </div>
+                              <!-- Submit button -->
+                              <div class="form-group">
+                                <div class=" col-lg-12">
+                                  <button type="submit" class="btn btn-lg btn-primary">Plan my trip</button>
+                                </div>
+                              </div>
+                            </form>
+                        </div><!-- /.well-->
+                </div><!-- /.col-md-4 -->
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.intro-header -->
+
+    <!-- Page Content -->
+
+	<a  name="services"></a>
+    <div class="content-section-a">
+
+        <div class="container">
+            <div class="row">
+                <div class=" col-lg-4 col-md-4 col-sm-4 col-xs-6">
+                    <div class="custom">
+                        <p class="text-center lead"><i class="fa fa-globe fa-5x"></i></p>
+                    <h3 class="text-center">Thousands of places to visit</h3>
+                    <!--<p class="text-center lead">Our immigration law firm has been committed to providing services tailored specifically to our customers since the day we started back in 1978.</p>-->
+                    </div>
+				</div>
+                <div class=" col-lg-4 col-md-4 col-sm-4 col-xs-6">
+                    <div class="custom">
+                        <p class="text-center lead"><i class="fa fa-bed fa-5x"></i></p>
+                    <h3 class="text-center">Thousands of places to stay</h3>
+                    <!--<p class="text-center lead">Our immigration law firm has been committed to providing services tailored specifically to our customers since the day we started back in 1978.</p>-->
+                    </div>
+				</div>
+                <div class=" col-lg-4 col-md-4 col-sm-4 col-xs-6">
+                    <div class="custom">
+                        <p class="text-center lead"><i class="fa fa-university fa-5x"></i></p>
+                    <h3 class="text-center">Thousands of things to see</h3>
+                    <!--<p class="text-center lead">Our immigration law firm has been committed to providing services tailored specifically to our customers since the day we started back in 1978.</p>-->
+                    </div>
+				</div>
+            </div><!-- /.row -->
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-a -->
+    
+    <div class="content-section-b">
+
+        <div class="container">
+
+            <div class="row-feature">
+                <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
+                    <hr class="section-heading-spacer">
+                    <div class="clearfix"></div>
+                    <h2 class="section-heading text-center">Your Ideal Vacation, Minus the Hustle</h2>
+                    <p class="lead">Planning your vacation could be quite exhausting.<br> TOTE finds and books flights, hotels, sightseeing tours and entertainment according to your dates, mood, and, most importantly,<i>&nbsp;budget</i>.&nbsp;All to make sure you have the time of your life.</p>
+                </div>
+                <div class="col-lg-5 col-sm-pull-6  col-sm-6">
+                    <img class="img-responsive" src="img/ramka-sm.jpg" alt="Family Vacation">
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.content-section-b -->
+
+   
+    <!-- /.content-section-a -->
+
+	<a  name="contact"></a>
+    <div class="banner">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="text-center">Like what you see? Give TOTE a try for free&nbsp;<a class="btn btn-primary btn-lg" href="javascript:document.getElementById('BeginUsingTOTE').focus()">Plan my trip</a></h2>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.container -->
+
+    </div>
+    <!-- /.banner -->
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <p>Feel free to <a href=mailto:mkotov13@simons-rock.edu>email me</a> with feedback and suggestions</p>
+                <p class="copyright text-muted small">&copy; 2015 Tote Inc.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Horizontal search</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/landing-page.css" rel="stylesheet">
+    <link href="css/row-feature.css" rel="stylesheet">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link href="css/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" media="all">
+    
+    <!-- Dropdowns enhancement -->
+    <link href="css/dropdowns-enhancement.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico">
+
+    <!-- jQuery -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="js/jquery.bootstrap-touchspin.js"></script>
+    
+    <!-- Validator -->
+    <script src="js/validator.js"></script>
+    <script src="js/validator.min.js"></script>
+    
+    <!-- Hidden position -->
+    <script src="hiddenposition/jquery.hiddenposition.1.1.js"></script>
+  <script src="hiddenposition/jquery.hiddenposition.1.1.min.js"></script>
+    
+    <!-- Date Picker -->
+    
+    <script>
+  $(function() {
+    $( "#inputStartDate" ).datepicker({
+      defaultDate: "+1w",
+      changeMonth: true,
+      numberOfMonths: 3,
+      onClose: function( selectedDate ) {
+        $( "#inputEndDate" ).datepicker( "option", "minDate", selectedDate );
+      }
+    });
+    $( "#inputEndDate" ).datepicker({
+      defaultDate: "+1w",
+      changeMonth: true,
+      numberOfMonths: 3,
+      onClose: function( selectedDate ) {
+        $( "#inputStartDate" ).datepicker( "option", "maxDate", selectedDate );
+      }
+    });
+  });
+  </script>
+    
+      <!-- Hidden Block -->
+  <script>
+   $(function() {
+    function position() {
+      $( ".positionable" ).hiddenPosition({
+        of: $( "#parent" ),
+        my: "top right",
+        at: "bottom right",
+        collision: $( "#collision_horizontal" ).val() + " " + $( "#collision_vertical" ).val()
+      });
+    }
+ 
+    $( ".positionable" ).css( "opacity", 1 );
+ 
+    $( "select, input" ).bind( "click keyup change", position );
+ 
+    $( "#parent" ).draggable({
+      drag: position
+    });
+ 
+    position();
+    
+      
+    $( "#parent" ).click(function() {
+    $( ".positionable" ).toggle();
+  });
+  });
+  </script>
+    
+    
+    
+
+</head>
+
+<body>
+
+    
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
+        <div class="container topnav">
+            <!-- Brand and toggle get grouped for better mobile display--> 
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand topnav text-center" href="#"><img src="img/inline-logo-sm.png"></a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling-->
+            <!-- /.navbar-collapse-->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Header -->
+    <a name="about"></a>
+    <div class="intro-header">
+        <div class="container">
+
+            <div class="row">
+                
+                <div class="col-lg-12 signup">
+                    <div class="intro-message">
+                       
+                        
+                       
+                            <form class="form-inline" action="form_email.php" method="post" data-toggle="validator">
+                              <!-- Budget -->
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <label for="inputBudget" class="input-group-addon">$</label>                                  
+                                        <input type="number" name="budget" class="form-control input-tiny" id="inputBudget" placeholder="Budget?" min="0" max="100000" required>
+                                    </div>
+                                </div>
+                                <!-- Start date -->
+                              <div class="form-group">
+                                <div class="input-group">
+                                  <input type="text" class="form-control input-tiny" id="inputStartDate" name="start_date" placeholder="Leave" required>
+                                  <label for="inputStartDate" class="input-group-addon"><span class="fa fa-calendar"></span></label>
+                                </div>
+                              </div>
+                              <!-- End date -->
+                              <div class="form-group">
+                                <div class="input-group">
+                                  <input type="text" class="form-control input-tiny" id="inputEndDate" name="end_date" placeholder="Back" required>
+                                  <label for="inputEndDate" class="input-group-addon"><span class="fa fa-calendar"></span></label>
+                                </div>
+                              </div>
+                                <!-- # of grownups 
+                              <div class="form-group required">
+                                <label for="inputAdultCount" class="control-label col-xs-5">How many adults?&nbsp;</label>
+                                <div class="col-xs-3 input-narrow">
+                                  <input type="number" name="adult_count" class="form-control" id="inputAdultCount" placeholder="#">
+                                </div>
+                              </div>-->
+                               
+                                     
+                                <!-- Adults count -->
+                                <input id="inputAdultCount" type="hidden" value="1" name="adult_count">
+                                
+                                
+                                <!-- Kids count -->
+                                <input id="inputKidsCount" type="hidden" value="0" name="kids_count">
+                                
+
+                                
+                                <!-- Travelers Count -->
+                                <div class="btn-group" id="parent">
+                                    <button data-toggle="dropdown" class="btn btn-default dropdown-toggle" id="result">1 Traveler <span class="caret"></span></button></div>
+                                
+                                <div class="btn-group">
+                              <button data-toggle="dropdown" class="btn btn-default dropdown-toggle">Mood? <span class="caret"></span></button>
+                              <ul class="dropdown-menu">
+                                <li>
+                                  <input type="checkbox" id="ex2_1" name="mood[]" value="Hot & Sunny"> 
+                                  <label for="ex2_1">Hot & Sunny</label>
+                                </li>
+                                <li>
+                                  <input type="checkbox" id="ex2_2" name="mood[]" value="City & Busy"> 
+                                  <label for="ex2_2">City & Buzzy</label>
+                                </li>
+                                  
+                                                    
+                                <li>
+                                  <input type="checkbox" id="ex2_3" name="mood[]" value="Beach">
+                                  <label for="ex2_3">Beach</label>
+                                </li>
+                                  
+                                <li>
+                                  <input type="checkbox" id="ex2_4" name="mood[]" value="Weekend drive">
+                                  <label for="ex2_4">Weekend Getaway</label>
+                                </li>
+                                  
+                                  <li>
+                                  <input type="checkbox" id="ex2_5" name="mood[]" value="Good for kids"> 
+                                    <label for="ex2_5">Good for kids</label>
+                                </li>
+                                  <li role="separator" class="divider"></li>
+                                
+                                <li>
+                                  <input type="checkbox" id="ex2_6" name="mood[]" value="Rent a car"> 
+                                  <label for="ex2_6">Rent a car?</label>
+                                </li>
+                              </ul>
+                            </div>
+                               <!-- Email -->
+                              <div class="form-group">
+                                <label for="inputEmail" class="sr-only">Email&nbsp;</label>
+                                           
+                                  <input type="email" name="email" class="form-control input-large" id="inputEmail" placeholder="Your Email" data-error="Email address is invalid" required>
+                                </div>
+                              
+                              <!-- Submit button -->
+                              <div class="form-group">
+                               <button type="submit" class="btn btn-primary">Go!</button>
+                              </div>
+                                
+                            </form>
+                        
+                        <br>
+                        <h3>Tote discovers your ideal vacation or weekend getaway.</h3>
+                        
+                    </div>
+                        </div><!-- /.well-->
+                </div><!-- /.col-md-4 -->
+                
+                <div class="panel panel-default positionable" id="positionable1">
+      <div class="panel-body">
+          <form class="form-inline">
+        <!-- Adult Count -->
+              <label for="adult_count">Adults</label>
+              <div class="form-group">
+                  
+                  
+              <input id="inputAdultCounter"
+                                    type="text"
+                                    class="input value1"
+                                       value="1"
+                                       name="adult_counter"
+                                       data-bts-min="1"
+                                       data-bts-max="10"
+                                       data-bts-init-val=""
+                                       data-bts-step="1"
+                                       data-bts-decimal="0"
+                                       data-bts-step-interval="100"
+                                       data-bts-force-step-divisibility="round"
+                                       data-bts-step-interval-delay="500"
+                                       data-bts-prefix=""
+                                       data-bts-postfix=""
+                                       data-bts-prefix-extra-class=""
+                                       data-bts-postfix-extra-class=""
+                                       data-bts-booster="true"
+                                       data-bts-boostat="10"
+                                       data-bts-max-boosted-step="false"
+                                       data-bts-mousewheel="true"
+                                       data-bts-button-down-class="btn btn-default"
+                                       data-bts-button-up-class="btn btn-default"
+                                        />
+                                <script>
+                                    $("input[name='adult_counter']").TouchSpin({
+                                    });
+                                    </script>
+              </div><br>
+              
+            <label for="kids_count">Kids</label>
+              <div class="form-group">
+              
+                  
+                                <!-- Kids count -->
+                                <input id="inputKidsCounter"
+                                       class="input value2"
+                                       type="text"
+                                       value="0"
+                                       name="kids_counter"
+                                       data-bts-min="0"
+                                       data-bts-max="10"
+                                       data-bts-init-val=""
+                                       data-bts-step="1"
+                                       data-bts-decimal="0"
+                                       data-bts-step-interval="100"
+                                       data-bts-force-step-divisibility="round"
+                                       data-bts-step-interval-delay="500"
+                                       data-bts-prefix=""
+                                       data-bts-postfix=""
+                                       data-bts-prefix-extra-class=""
+                                       data-bts-postfix-extra-class=""
+                                       data-bts-booster="true"
+                                       data-bts-boostat="10"
+                                       data-bts-max-boosted-step="false"
+                                       data-bts-mousewheel="true"
+                                       data-bts-button-down-class="btn btn-default"
+                                       data-bts-button-up-class="btn btn-default"
+                                        />
+                                <script>
+                                    $("input[name='kids_counter']").TouchSpin({
+                                    });
+                                </script>
+                  
+                  <script type="text/javascript">
+            $( ".input" ).change(doMath);
+    function doMath()
+    {
+        // Capture the entered values of two input boxes
+        var my_input1 = document.getElementById('inputAdultCounter').value;
+        var my_input2 = document.getElementById('inputKidsCounter').value;
+
+        // Copy values into the hidden fields
+        $("#inputAdultCount").val(my_input1);
+        $("#inputKidsCount").val(my_input2);
+        
+        // Add them together and display
+        var sum = parseInt(my_input1) + parseInt(my_input2);
+        
+        // Pluralize
+        if (sum === 1) { var noun="Traveler";} else { var noun="Travelers";}
+        //$("#result").val(sum + " " + noun);
+        document.getElementById("result").innerHTML = sum + " " + noun + "<span class='caret'></span>";
+    }
+</script>
+                  
+                  </div>
+              </form>
+
+      </div>
+    </div>
+                
+                
+        </div>
+        <!-- /.row -->    
+        </div>
+        <!-- /.container -->
+</div>
+    <!-- /.intro-header -->
+
+    <!-- Page Content -->
+
+    <!-- Footer 
+    <footer>
+        <div class="container">
+            <div class="row">
+                <p class="copyright text-muted small">&copy; 2015 Tote Inc.</p>
+            </div>
+        </div>
+    </footer>-->
+
+    <!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+</body>
+    <script src="js/dropdowns-enhancement.min.js"></script>
+
+</html>

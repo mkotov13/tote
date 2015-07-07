@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Horizontal search</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/landing-page.css" rel="stylesheet">
+    <link href="css/row-feature.css" rel="stylesheet">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link href="css/jquery.bootstrap-touchspin.css" rel="stylesheet" type="text/css" media="all">
+    
+    <!-- Dropdowns enhancement -->
+    <link href="css/dropdowns-enhancement.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico">
+
+    <!-- jQuery -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="js/jquery.bootstrap-touchspin.js"></script>
+<script>
+$(document).ready(function(){
+    $(".input").keyup(function(){
+          var val1 = +$(".value1").val();
+          var val2 = +$(".value2").val();
+          $("#result").val(val1+val2);
+   });
+});
+    </script>
+    </head>
+    <body>
+<input id="inputAdultCounter"
+                                    type="text"
+                                    class="input value1"
+                                       value="1"
+                                    oninput="doMath();"
+                                       name="adult_counter"
+                                       data-bts-min="1"
+                                       data-bts-max="10"
+                                       data-bts-init-val=""
+                                       data-bts-step="1"
+                                       data-bts-decimal="0"
+                                       data-bts-step-interval="100"
+                                       data-bts-force-step-divisibility="round"
+                                       data-bts-step-interval-delay="500"
+                                       data-bts-prefix=""
+                                       data-bts-postfix=""
+                                       data-bts-prefix-extra-class=""
+                                       data-bts-postfix-extra-class=""
+                                       data-bts-booster="true"
+                                       data-bts-boostat="10"
+                                       data-bts-max-boosted-step="false"
+                                       data-bts-mousewheel="true"
+                                       data-bts-button-down-class="btn btn-default"
+                                       data-bts-button-up-class="btn btn-default"
+                                        />
+                                <script>
+                                    $("#inputAdultCounter").TouchSpin({
+                                    });
+                                    </script>
+
+        <input id="inputKidsCounter"
+                                         oninput="doMath();"
+                                       class="input value2"
+                                       type="text"
+                                       value="0"
+                                       name="kids_counter"
+                                       data-bts-min="0"
+                                       data-bts-max="10"
+                                       data-bts-init-val=""
+                                       data-bts-step="1"
+                                       data-bts-decimal="0"
+                                       data-bts-step-interval="100"
+                                       data-bts-force-step-divisibility="round"
+                                       data-bts-step-interval-delay="500"
+                                       data-bts-prefix=""
+                                       data-bts-postfix=""
+                                       data-bts-prefix-extra-class=""
+                                       data-bts-postfix-extra-class=""
+                                       data-bts-booster="true"
+                                       data-bts-boostat="10"
+                                       data-bts-max-boosted-step="false"
+                                       data-bts-mousewheel="true"
+                                       data-bts-button-down-class="btn btn-default"
+                                       data-bts-button-up-class="btn btn-default"
+                                        />
+                                <script>
+                                    $("input[name='kids_counter']").TouchSpin({
+                                    });
+                                </script>
+        
+        <input type="button" value="Add Them Together" onclick="numba();" />
+        <script type="text/javascript">
+            $( ".input" ).change(doMath);
+    function doMath()
+    {
+        // Capture the entered values of two input boxes
+        var my_input1 = document.getElementById('inputAdultCounter').value;
+        var my_input2 = document.getElementById('inputKidsCounter').value;
+
+        // Add them together and display
+        var sum = parseInt(my_input1) + parseInt(my_input2);
+        
+        if (sum === 1) { var noun="Traveler";} else { var noun="Travelers";}
+        //$("#result").val(sum + " " + noun);
+        document.getElementById("demo").innerHTML = sum + " " + noun;
+    }
+</script>
+        
+<input type="text" disabled="disabled" value="1 Traveler" id="result"><br>
+        <button id="demo">Hello</button>
+        </body>
+</html>
+    
