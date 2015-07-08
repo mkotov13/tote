@@ -31,20 +31,46 @@ h6 {
 
 .intro-header {
     padding-top: 50px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
-    padding-bottom: 50px;
-    height: 100%;
     text-align: center;
     
-    background: 
+    /*,
+            url(../img/travel-o.jpg) repeat-y center center;
+    background-repeat: repeat-y;
+    background-size: cover;*/
+}
+
+.intro-message > h3 {
+    color: black;
+}
+
+@media(min-width:768px){
+
+    .intro-header {
+        background: 
             linear-gradient(to bottom, rgba(51,122,183, 0.4) 0%, rgba(51,122,183, 0.4) 100%),
             url(../img/travel-o.jpg) no-repeat center center;
-    background-size: cover;
+        background-size: cover;
+        height: 100%;
+    }
+    
+    .intro-message > h3 {
+    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
+    font-style: italic;
+    }
+    
+     .intro-message {
+        padding-bottom: 15%;
+    }
+    
+    .intro-message > h3 {
+    color: white;
+    }
 }
 
 .intro-message {
     position: relative;
     color: #fff;
-    padding-top: 14%;
+    padding-top: 1%;
     padding-bottom: 5%;
 }
 
@@ -54,21 +80,16 @@ h6 {
     font-size: 4em;
 }
 
+
 .intro-divider {
     width: 400px;
     border-top: 1px solid #f8f8f8;
     border-bottom: 1px solid rgba(0,0,0,0.2);
 }
 
-.intro-message > h3 {
-    text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
-    font-style: italic;
-}
 
-@media(max-width:767px) {
-    .intro-message {
-        padding-bottom: 15%;
-    }
+@media(max-width:767px) { 
+   
 
     .intro-message > h1 {
         font-size: 3em;
@@ -88,7 +109,6 @@ h6 {
         width: 100%;
     }
 }
-
 .network-name {
     text-transform: uppercase;
     font-size: 14px;
@@ -221,11 +241,13 @@ input[type=number]::-webkit-outer-spin-button {
     
 }
 
+@media(min-width:767px){
 .input-large {
     max-width: 160px;
 }
 .input-tiny {
     max-width: 100px;
+}
 }
 
 .input-medium {

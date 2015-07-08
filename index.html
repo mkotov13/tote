@@ -184,7 +184,6 @@
                                 <!-- Adults count -->
                                 <input id="inputAdultCount" type="hidden" value="1" name="adult_count">
                                 
-                                
                                 <!-- Kids count -->
                                 <input id="inputKidsCount" type="hidden" value="0" name="kids_count">
                                 
@@ -192,12 +191,148 @@
                                 <input id="inputToddCount" type="hidden" value="0" name="todd_count">
                                 
 
+                                <div class="form-group visible-xs text-left">
+                                    <div class="col-sm-2">
+                                        <label for="adult_count_mob" class="white-label">Adults</label>
+                                    </div>
+                  
+                                    <div>
+                                        <input id="inputAdultCountMob"
+                                        type="text"
+                                        class="input-mob value1"
+                                           value="1"
+                                           name="adult_count_mob"
+                                           data-bts-min="1"
+                                           data-bts-max="10"
+                                           data-bts-init-val=""
+                                           data-bts-step="1"
+                                           data-bts-decimal="0"
+                                           data-bts-step-interval="100"
+                                           data-bts-force-step-divisibility="round"
+                                           data-bts-step-interval-delay="500"
+                                           data-bts-prefix=""
+                                           data-bts-postfix=""
+                                           data-bts-prefix-extra-class=""
+                                           data-bts-postfix-extra-class=""
+                                           data-bts-booster="true"
+                                           data-bts-boostat="10"
+                                           data-bts-max-boosted-step="false"
+                                           data-bts-mousewheel="true"
+                                           data-bts-button-down-class="btn btn-default"
+                                           data-bts-button-up-class="btn btn-default"
+                                            />
+                                    <script>
+                                        $("input[name='adult_count_mob']").TouchSpin({
+                                        });
+                                        </script>
+                                    </div>
+                                </div>
+                                
+                                 <!-- Kids count 
+                                <input id="inputKidsCount" type="hidden" value="0" name="kids_count">-->
+                                
+                                <div class="form-group visible-xs text-left">
+                                    <div class="col-sm-2">
+                                        <label for="kids_count_mob" class="white-label">Kids</label>
+                                    </div>
+                  
+                                    <div>
+                                        <input id="inputKidsCountMob"
+                                        type="text"
+                                        class="input-mob value2"
+                                           value="1"
+                                           name="kids_count_mob"
+                                           data-bts-min="1"
+                                           data-bts-max="10"
+                                           data-bts-init-val=""
+                                           data-bts-step="1"
+                                           data-bts-decimal="0"
+                                           data-bts-step-interval="100"
+                                           data-bts-force-step-divisibility="round"
+                                           data-bts-step-interval-delay="500"
+                                           data-bts-prefix=""
+                                           data-bts-postfix=""
+                                           data-bts-prefix-extra-class=""
+                                           data-bts-postfix-extra-class=""
+                                           data-bts-booster="true"
+                                           data-bts-boostat="10"
+                                           data-bts-max-boosted-step="false"
+                                           data-bts-mousewheel="true"
+                                           data-bts-button-down-class="btn btn-default"
+                                           data-bts-button-up-class="btn btn-default"
+                                            />
+                                    <script>
+                                        $("input[name='kids_count_mob']").TouchSpin({
+                                        });
+                                        </script>
+                                    </div>
+                                </div>
+                                
+                                <!-- Todd count 
+                                <input id="inputToddCount" type="hidden" value="0" name="todd_count">-->
+                                
+                                <div class="form-group visible-xs text-left">
+                                    <div class="col-sm-2">
+                                        <label for="todd_count_mob" class="white-label">Babies</label>
+                                    </div>
+                  
+                                    <div>
+                                        <input id="inputToddCountMob"
+                                        type="text"
+                                        class="input-mob value3"
+                                           value="1"
+                                           name="todd_count_mob"
+                                           data-bts-min="1"
+                                           data-bts-max="10"
+                                           data-bts-init-val=""
+                                           data-bts-step="1"
+                                           data-bts-decimal="0"
+                                           data-bts-step-interval="100"
+                                           data-bts-force-step-divisibility="round"
+                                           data-bts-step-interval-delay="500"
+                                           data-bts-prefix=""
+                                           data-bts-postfix=""
+                                           data-bts-prefix-extra-class=""
+                                           data-bts-postfix-extra-class=""
+                                           data-bts-booster="true"
+                                           data-bts-boostat="10"
+                                           data-bts-max-boosted-step="false"
+                                           data-bts-mousewheel="true"
+                                           data-bts-button-down-class="btn btn-default"
+                                           data-bts-button-up-class="btn btn-default"
+                                            />
+                                    <script>
+                                        $("input[name='todd_count_mob']").TouchSpin({
+                                        });
+                                        </script>
+                                    </div>
+                                </div>
+                                
+                                <script type="text/javascript">
+                                    $( ".input-mob" ).change(doMath2);
+                                    function doMath2()
+                                    {
+                                        // Capture the entered values of two input boxes
+                                        var mob_input1 = document.getElementById('inputAdultCountMob').value;
+                                        var mob_input2 = document.getElementById('inputKidsCountMob').value;
+                                        var mob_input3 = document.getElementById('inputToddCountMob').value;
+
+                                        // Copy values into the hidden fields
+                                        $("#inputAdultCount").val(mob_input1);
+                                        $("#inputKidsCount").val(mob_input2);
+                                        $("#inputToddCount").val(mob_input3);
+
+                                    }
+                                </script>
+                                
+                                
                                 
                                 <!-- Travelers Count -->
-                                <div class="btn-group" id="parent">
+                                <div class="btn-group hidden-xs" id="parent">
                                     <button data-toggle="dropdown" class="btn btn-default dropdown-toggle" id="result">1 Traveler <span class="caret"></span></button></div>
                                 
-                                <div class="btn-group">
+                                <!-- Mood -->
+                                <div class="btn-group hidden-xs">
                               <button data-toggle="dropdown" class="btn btn-default dropdown-toggle">Mood? <span class="caret"></span></button>
                               <ul class="dropdown-menu">
                                 <li>
@@ -232,12 +367,36 @@
                                 </li>
                               </ul>
                             </div>
+                                
+                                <!-- Mood MOBILE -->
+                                <div class="visible-xs">
+                                <fieldset data-role="controlgroup" data-type="horizontal">
+                                <legend>Mood:</legend>
+                                <input type="checkbox" name="checkbox-h-2a" id="checkbox-h-2a">
+                                <label for="checkbox-h-2a">Hot & Sunny</label>
+                                <input type="checkbox" name="checkbox-h-2b" id="checkbox-h-2b">
+                                <label for="checkbox-h-2b">City & Buzzy</label>
+                                <input type="checkbox" name="checkbox-h-2c" id="checkbox-h-2c">
+                                <label for="checkbox-h-2c">Beach</label>
+                                <input type="checkbox" name="checkbox-h-2c" id="checkbox-h-2c">
+                                <label for="checkbox-h-2c">Weekend Getaway</label>
+                                <input type="checkbox" name="checkbox-h-2c" id="checkbox-h-2c">
+                                <label for="checkbox-h-2c">Good for Kids</label><br>
+                                <input type="checkbox" name="checkbox-h-2c" id="checkbox-h-2c">
+                                <label for="checkbox-h-2c">Rent a car?</label>
+                                </fieldset>
+                                </div>
+                                
                                <!-- Email -->
-                              <div class="form-group">
-                                <label for="inputEmail" class="sr-only">Email&nbsp;</label>
-                                           
+                                <div class="form-group">
+                                <div class="col-sm-2">
+                                    <label for="inputEmail" class="visible-xs text-left">Email&nbsp;</label>
+                                </div>
+                                    
+                                <div>
                                   <input type="email" name="email" class="form-control input-large" id="inputEmail" placeholder="Your Email" data-error="Email address is invalid" required>
                                 </div>
+                                </div>           
                               
                               <!-- Submit button -->
                               <div class="form-group">
