@@ -1,6 +1,7 @@
 <?php
 
 /* names are:
+    city
     budget
     start-date
     end-date
@@ -33,6 +34,8 @@ if(isset($_POST['email'])) {
  
     if(!isset($_POST['budget']) ||
  
+        !isset($_POST['city']) ||
+       
         !isset($_POST['start_date']) ||
  
         !isset($_POST['end_date']) ||
@@ -58,6 +61,7 @@ if(isset($_POST['email'])) {
 
     $body .= 'Selected Mood: ' . $selectedMood;
  
+    $city = $_POST['city']; // required
     $budget = $_POST['budget']; // required
     $start_date = $_POST['start_date']; // required
     $end_date = $_POST['end_date']; // required
@@ -116,6 +120,7 @@ if(isset($_POST['email'])) {
  
     }
  
+    $email_message .= "From: ".clean_string($city)."\n"; 
     $email_message .= "Budget: ".clean_string($budget)."\n"; 
     $email_message .= "Start date: ".clean_string($start_date)."\n"; 
     $email_message .= "End Date: ".clean_string($end_date)."\n"; 

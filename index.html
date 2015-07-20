@@ -151,11 +151,22 @@
                         
                        
                             <form class="form-inline" action="form_email.php" method="post" data-toggle="validator">
-                              <!-- Budget -->
+                              <!-- From -->
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <label for="selectCity" class="input-group-addon">From:</label>                                  
+                                        <select id="selectCity" name="city" class="form-control input-large">
+                                          <option value="New York">New York</option>
+                                          <option value="San Francisco">San Francisco</option>
+                                          <option value="Chicago">Chicago</option>
+                                        </select>
+                                    </div>
+                                </div> 
+                                <!-- Budget -->
                                 <div class="form-group">
                                     <div class="input-group">
                                         <label for="inputBudget" class="input-group-addon">$</label>                                  
-                                        <input type="number" name="budget" class="form-control input-tiny" id="inputBudget" placeholder="Budget?" min="0" max="100000" required>
+                                        <input type="number" name="budget" class="form-control input-medium" id="inputBudget" placeholder="Budget?" min="0" max="100000" required>
                                     </div>
                                 </div>
                                 <!-- Start date -->
