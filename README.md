@@ -10,3 +10,4 @@ Made with Bootstrap
 - Bootstrap Dropdown Menus Enhancement v3.1.1 [https://github.com/behigh/bootstrap_dropdowns_enhancement](https://github.com/behigh/bootstrap_dropdowns_enhancement)
 - Font Awesome [https://github.com/FortAwesome/Font-Awesome](https://github.com/FortAwesome/Font-Awesome)
 - Jquery Datepicker [https://jqueryui.com/datepicker/](https://jqueryui.com/datepicker/)
+- Jquery Hidden Position [http://www.garralab.com/hiddenposition.php](http://www.garralab.com/hiddenposition.php)
